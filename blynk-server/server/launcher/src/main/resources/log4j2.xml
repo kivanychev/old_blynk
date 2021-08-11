@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <Appenders>
+
+        <RollingFile name="postgresDBLog" fileName="${sys:logs.folder}/postgres.log"
+              filePattern="${sys:logs.folder}/archive/postgres.log.%d{yyyy-MM-dd}">
+            <PatternLayout>
+                <pattern>%d{HH:mm:ss.SSS} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="workersLog" fileName="${sys:logs.folder}/worker.log"
+                     filePattern="${sys:logs.folder}/archive/worker.log.%d{yyyy-MM-dd}">
+            <PatternLayout>
+                <pattern>%d{HH:mm:ss.SSS} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="statsLog" fileName="${sys:logs.folder}/stats.log"
+                     filePattern="${sys:logs.folder}/archive/stats.log.%d{yyyy-MM-dd}">
+            <PatternLayout>
+                <pattern>%msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="userLog" fileName="${sys:logs.folder}/blynk.log"
+                     filePattern="${sys:logs.folder}/archive/blynk.log.%d{yyyy-MM-dd}">
+            <PatternLayout>
+                <pattern>%d{HH:mm:ss.SSS} %-5level- %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+
+        <Logger name="cc.blynk.server.workers" level="debug" additivity="false">
+            <appender-ref ref="workersLog"/>
+        </Logger>
+        <Logger name="cc.blynk.server.workers.StatsWorker" level="debug" additivity="false">
+            <appender-ref ref="statsLog"/>
+        </Logger>
+        <Logger name="cc.blynk.server.db" level="debug" additivity="false">
+            <appender-ref ref="postgresDBLog"/>
+        </Logger>
+        <Logger name="com.zaxxer.hikari" level="OFF" additivity="false">
+        </Logger>
+
+        <Logger name="org.asynchttpclient.netty.channel" level="OFF" additivity="false" />
+
+        <!-- turn off netty errors in debug mode for native library loading
+         https://github.com/blynkkk/blynk-server/issues/751 -->
+        <Logger name="io.netty" level="INFO" additivity="false" />
+
+        <Root level="info">
+            <AppenderRef ref="userLog"/>
+        </Root>
+
+    </Loggers>
+</Configuration>

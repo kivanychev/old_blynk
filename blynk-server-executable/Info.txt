@@ -1,0 +1,28 @@
+Mobile application install and configure Arduino IDE
+  https://www.youtube.com/watch?v=bXwCWJH5bgo
+
+
+Install Blynk library ti Arduino
+
+Install the server
+  Download the server release
+  https://github.com/blynkkk/blynk-server
+  
+  Install the correct jdk and set path to jdk\bin folder at the top of the list
+  
+  Install server and connect to ESP32 device
+  https://www.youtube.com/watch?v=33ynNkvfvWU
+
+
+Blynk Code sample generator
+https://examples.blynk.cc/?board=ESP32&shield=ESP32%20WiFi&example=GettingStarted%2FBlynkBlink 
+
+
+Blynk server admin page:
+(Check IP address before staring)
+https://192.168.1.34:9443/admin
+
+
+Address of the camera:
+ Specify in Blynk Application
+ http://192.168.1.37/mjpeg/1

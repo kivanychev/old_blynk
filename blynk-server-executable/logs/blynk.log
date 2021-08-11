@@ -1,0 +1,11 @@
+08:01:04.833 INFO - Using data dir '.\Data'
+08:01:05.378 INFO - Region : local. Host : 192.168.1.37.
+08:01:05.971 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+08:01:06.051 INFO - Reports : 0
+08:01:06.052 INFO - Didn't find custom user certificates.
+08:01:06.054 INFO - Didn't find Let's Encrypt certificates.
+08:01:06.054 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+08:01:06.054 WARN - ATTENTION. Server certificate paths (cert : 'F:\BLYNK\server', key : 'F:\BLYNK\server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+08:01:07.526 INFO - HTTP API and WebSockets server listening at 8080 port.
+08:01:07.528 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+08:01:07.529 INFO - Mqtt hardware server listening at 8440 port.
